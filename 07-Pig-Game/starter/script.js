@@ -18,7 +18,6 @@ let currentScore = 0;
 let isPlaying = true;
 
 const init = function () {
-
   //reset aind init method
   score[0] = 0;
   score[1] = 0;
@@ -26,17 +25,16 @@ const init = function () {
   currentScore = 0;
   isPlaying = true;
 
-
-
   isPlaying = true;
 
-  // reset current scoe 
+  // reset current scoe
   currentElement0.textContent = 0;
   currentElement1.textContent = 0;
 
   //Remove Winner Height
-  document.querySelector(`.player--${activePlayer}`).classList.remove(`player--winner`);
-  // document.querySelector(`.player--1`).classList.remove(`player--winner`);
+  document.querySelector(`.player--0`).classList.remove(`player--winner`);
+  document.querySelector(`.player--1`).classList.remove(`player--winner`);
+  //Fixed Bug for removing player wiinner after win by adding remove player--0 and player--1 winners
 
   // remove background tap
   playerOneElement.classList.remove(`player-active`);
@@ -45,22 +43,17 @@ const init = function () {
   // Switch Active Player
   activePlayer = 0;
 
-  // current score reset 
+  // current score reset
   currentScore = 0;
 
   score[0] = 0;
   score[1] = 0;
 
-
   document.getElementById(`score--0`).textContent = 0;
   document.getElementById(`score--1`).textContent = 0;
 
-
-  // Hide Dice 
+  // Hide Dice
   diceElement.classList.add('Hidden');
-
-
-
 };
 
 init();
@@ -136,6 +129,5 @@ btnHold.addEventListener('click', function () {
     }
   }
 });
-
 
 btnNew.addEventListener('click', init);
