@@ -17,6 +17,53 @@ let activePlayer = 0;
 let currentScore = 0;
 let isPlaying = true;
 
+const init = function () {
+
+  //reset aind init method
+  score[0] = 0;
+  score[1] = 0;
+  activePlayer = 0;
+  currentScore = 0;
+  isPlaying = true;
+
+
+
+  isPlaying = true;
+
+  // reset current scoe 
+  currentElement0.textContent = 0;
+  currentElement1.textContent = 0;
+
+  //Remove Winner Height
+  document.querySelector(`.player--${activePlayer}`).classList.remove(`player--winner`);
+  // document.querySelector(`.player--1`).classList.remove(`player--winner`);
+
+  // remove background tap
+  playerOneElement.classList.remove(`player-active`);
+  playerOneElement.classList.add(`player--active`);
+
+  // Switch Active Player
+  activePlayer = 0;
+
+  // current score reset 
+  currentScore = 0;
+
+  score[0] = 0;
+  score[1] = 0;
+
+
+  document.getElementById(`score--0`).textContent = 0;
+  document.getElementById(`score--1`).textContent = 0;
+
+
+  // Hide Dice 
+  diceElement.classList.add('Hidden');
+
+
+
+};
+
+init();
 // initializes variables and reset game
 scoreElement0.textContent = 0;
 scoreElement1.textContent = 0;
@@ -89,3 +136,6 @@ btnHold.addEventListener('click', function () {
     }
   }
 });
+
+
+btnNew.addEventListener('click', init);
