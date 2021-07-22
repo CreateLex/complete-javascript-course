@@ -26,4 +26,33 @@ const restaurant = {
       close: 24,
     },
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Your Pasta order has ${ing1}, ${ing2}, and ${ing3}`);
+  },
 };
+
+//
+console.log(`whats going on people`);
+const { name, categories } = restaurant;
+
+// spread operator
+const newMenu = [...restaurant.mainMenu];
+console.log(newMenu);
+const newMenuCopy = [...newMenu, ...restaurant.mainMenu];
+console.log(newMenuCopy);
+
+const ingredients = [
+  prompt('Enter 1st ingredients'),
+  prompt('Enter 2nd ingredients'),
+  prompt('Enter last ingredients'),
+];
+
+restaurant.orderPasta(...ingredients);
+
+// create shallow copy of object
+
+const restaurant2 = { ...restaurant };
+
+// create shallow copy woth custom property
+const restaurant3 = { founder: 1998, ...restaurant };
+console.log(restaurant3);
